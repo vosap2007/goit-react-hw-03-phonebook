@@ -57,10 +57,18 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount () {
+  /*componentDidMount () {
       const contacts = localStorage.getItem('contacts');
       const contactParst = JSON.parse(contacts);
       this.setState({ contacts: contactParst});
+  }*/
+
+  componentDidMount() {
+    const contacts = localStorage.getItem("contacts");
+    if (contacts !== null) {
+      const contactParst = JSON.parse(contacts);
+      this.setState({ contacts: contactParst });
+    }
   }
 
   render() {
